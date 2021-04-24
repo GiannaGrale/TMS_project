@@ -42,7 +42,25 @@ public class Lesson_2 {
         }
     }
 
+     public static void task2Updated () {
 
+          Scanner sc = new Scanner(System.in);
+          System.out.print("Введите 4-х значное число:");
+
+          int number = sc.nextInt();
+          String str = Integer.toString(number);
+          int length = str.length();
+
+           for(int i = 0; i < length; i++) {
+               for (int j = i + 1; j < length; j++) {
+                    if (str.charAt(i) == str.charAt(j)) {
+                System.out.println("Одинаковые цифры в числе");
+                return;
+            }
+        }
+    }
+        System.out.println("Разные цифры в числе");
+}
 
     public static void task_3() {
 
