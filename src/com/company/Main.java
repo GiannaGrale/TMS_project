@@ -1,10 +1,11 @@
 package com.company;
 
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-
         Lesson_2.task_1();
         Lesson_2.task_2();
         Lesson_2.task2Updated();
@@ -13,10 +14,15 @@ public class Main {
         Lesson_2.task_5();
         Lesson_2.task_6();
         Lesson_2.task_7();
-
-
     }
 }
+
+
+
+
+
+
+
 
 
 

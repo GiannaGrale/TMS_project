@@ -136,19 +136,19 @@ public class Lesson_2 {
         int devNum = scan.nextInt();
         if (devNum < 0) {
             System.out.println(" Ошибка, отрицательное число!");
+
         } else if (devNum % 10 == 1 && devNum % 100 != 11) {
             System.out.println(devNum + " программист");
-            return;
 
-        } else if (devNum % 100 < 10 || devNum % 100 > 20 && devNum % 10 >= 2 && devNum % 10 <= 4) {
+
+        } else if (devNum % 10 >= 2 && devNum % 10 <= 4 && devNum >= 22 || devNum >= 2 && devNum <= 4) {
             System.out.println(devNum + " программиста");
-            return;
-        } else {
+        }
+
+          else {
             System.out.println(devNum + " программистов");
-            return;
         }
 
     }
-
 }
 
