@@ -23,7 +23,7 @@ public class Lesson_3 {
         for (firstCounter = 0; firstCounter < 10; firstCounter++) {
             System.out.print("\n" + newArray[firstCounter]);
         }
-        System.out.print("\n");
+        System.out.println("\n");
     }
 
     public static void task_2() {
@@ -59,15 +59,15 @@ public class Lesson_3 {
         for (int i = 0; i < thirdArray.length; i++) {
             thirdArray[i] = (int) (Math.random() * 100);
         }
-            for (int i = 0; i < thirdArray.length; i++) {
+        for (int i = 0; i < thirdArray.length; i++) {
             if (thirdArray[i] % 2 == 0) {
                 a++;
             }
             System.out.print(thirdArray[i] + " ");
         }
-            System.out.println();
-            System.out.println("В массиве кол-во четных элементов равно: " + a);
-            System.out.print("\n");
+        System.out.println();
+        System.out.println("В массиве кол-во четных элементов равно: " + a);
+        System.out.print("\n");
 
     }
 
@@ -130,20 +130,16 @@ public class Lesson_3 {
             sixthArray[i] = (int) (Math.random() * 11);
             System.out.print(sixthArray[i] + " ");
         }
-        for (int i = 0; i < sixthArray.length; i++) {
-            if (i > 0) {
-                if (sixthArray[i-1] >= sixthArray[i]) {
-                    System.out.print("\n");
-                    System.out.println("Массив не имеет строго возрастающей последовательности");
-                    System.out.print("\n");
-                    return;
 
-                }
+        String result = "Массив имеет строго возрастающую последоватеьность";
+        for (int i = 1; i < sixthArray.length; i++) {
+            if (sixthArray[i - 1] >= sixthArray[i]) {
+                result = "Массив не имеет строго возрастающей последовательности";
+                break;
             }
         }
-        System.out.print("\n");
-        System.out.println("Массив имеет строго возрастающую последовательность");
-        System.out.print("\n");
+
+        System.out.print("\n" + result);
     }
 
 
@@ -268,33 +264,32 @@ public class Lesson_3 {
 
         //2) Вывести нечетные элементы находящиеся под главной диагональю(включительно).
 
+        int s = 0;
         for (int i = 0; i < tenthArray.length; i++) {
             for (int j = 0; j < tenthArray.length; j++) {
-                if (i == j) {
-                    if (tenthArray[i][j] % 2 != 0) {
-                        sum += tenthArray[i][j];
-                    }
-                }
-                if (j < i && tenthArray[i][j] % 2 != 0) {
-                    sum += tenthArray[i][j];
+                if (j <= i && tenthArray[i][j] % 2 != 0) {
+                    s += tenthArray[i][j];
                 }
 
             }
 
         }
-        System.out.println("Сумма нечетных элементов находящихся под главной диагональю равна:" + sum);
+
+        System.out.println("Сумма нечетных элементов находящихся под главной диагональю включительно равна:" + s);
 
         //4) Посчитать сумму четных элементов стоящих над побочной диагональю (не включительно)
+        int z = 0;
         for (int i = 0; i < tenthArray.length; i++) {
             for (int j = 0; j < tenthArray.length - i - 1; j++) {
 
                 if (tenthArray[i][j] % 2 == 0) {
-                    sum += tenthArray[i][j];
+                    z += tenthArray[i][j];
+
                 }
 
             }
         }
-        System.out.println("Сумма четных элементов находящихся над побочной  диагональю равна:" + sum);
+        System.out.println("Сумма четных элементов находящихся над побочной  диагональю равна:" + z);
 
         // Проверить произведение элементов какой диагонали больше.
 
@@ -328,7 +323,7 @@ public class Lesson_3 {
             for (int j = 0; j < tenthArray.length; j++) {
 
                 System.out.print(tenthArray[j][i] + " ");
-            }   System.out.print("\n");;
+            }   System.out.print("\n");
         }
     }
 }
