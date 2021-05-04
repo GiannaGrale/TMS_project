@@ -28,8 +28,9 @@ public class Lesson_3 {
 
     public static void task_2() {
 
-        int[] secondArray = new int[99];
-        for (int i = 1, j = 0; i <= secondArray.length; i++) {
+        int[] secondArray = new int[50];
+        int maxIndex = 99;
+        for (int i = 1, j = 0; i <= maxIndex; i++) {
             if (i % 2 != 0) {
                 secondArray[j] = i;
                 System.out.print(secondArray[j] + " ");
@@ -41,8 +42,9 @@ public class Lesson_3 {
 
     public static void task_2_1() {
 
-        int[] secondArray = new int[99];
-        for (int i = 99, j = 0; i <= secondArray.length; i--) {
+        int[] secondArray = new int[50];
+        int maxIndex = 99;
+        for (int i = 99, j = 0; i <= maxIndex; i--) {
             if (i % 2 != 0 && i > 0) {
                 secondArray[j] = i;
                 System.out.print(secondArray[j] + " ");
@@ -231,7 +233,7 @@ public class Lesson_3 {
             }
 
         }
-             System.out.println(Arrays.toString(anotherNinthArray));
+        System.out.println(Arrays.toString(anotherNinthArray));
     }
 
     public static void twoDimensionalArray() {
@@ -247,7 +249,7 @@ public class Lesson_3 {
                 tenthArray[i][j] = (int) (Math.random() * 51);
                 System.out.print(tenthArray[i][j] + "\t");
             }
-                System.out.println();
+            System.out.println();
         }
 
         // 1) Посчитать сумму четных элементов стоящих на главной диагонали
@@ -323,7 +325,8 @@ public class Lesson_3 {
             for (int j = 0; j < tenthArray.length; j++) {
 
                 System.out.print(tenthArray[j][i] + " ");
-            }   System.out.print("\n");
+            }
+            System.out.print("\n");
         }
     }
 }
