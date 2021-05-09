@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Lesson_2.task_1();
+  /*      Lesson_2.task_1();
         Lesson_2.task_2();
         Lesson_2.task2Updated();
         Lesson_2.task_3();
@@ -30,7 +30,7 @@ public class Main {
         Lesson_3.task_9();
         Lesson_3.twoDimensionalArray();
 
-        Lesson_4.main();
+        Lesson_4.main();*/
 
     }
 }

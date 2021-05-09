@@ -50,4 +50,3 @@ public class Military extends AirTransport {
                 + "\n" + "Количество ракет на борту: " + missile+ "\n");
     }
 }
-

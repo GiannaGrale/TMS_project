@@ -23,7 +23,7 @@ public class Light extends GroundTransport {
         return spentFuel = (fuelInput * distance) / 100;
     }
 
-    private double actualSpentFuel(double spentFuel) {
+    private double actualSpentFuel() {
         return spentFuel;
     }
 
