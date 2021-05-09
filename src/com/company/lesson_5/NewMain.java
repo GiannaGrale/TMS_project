@@ -1,6 +1,6 @@
 package com.company.lesson_5;
 
-public class newMain {
+public class NewMain {
 
     public static void main(String[] args) {
         Light light = new Light("Sedan", 163, 8, 4,
