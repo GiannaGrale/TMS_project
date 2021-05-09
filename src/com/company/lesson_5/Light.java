@@ -23,7 +23,7 @@ public class Light extends GroundTransport {
         return spentFuel = (fuelInput * distance) / 100;
     }
 
-    private double actualSpentFuel(double spentFuel) {
+    private double actualSpentFuel() {
         return spentFuel;
     }
 
@@ -37,10 +37,7 @@ public class Light extends GroundTransport {
         super.distanceCalc();
     }
 
-    @Override
-    void load() {
-        System.out.println(loadCheck);
-    }
+    void load() { System.out.println(loadCheck);}
 
     @Override
     public void description() {

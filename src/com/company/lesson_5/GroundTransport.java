@@ -4,4 +4,3 @@ abstract class GroundTransport extends Transport {
     String bodyStyle;
     int passengerNumber;
 }
-

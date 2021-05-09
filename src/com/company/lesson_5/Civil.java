@@ -51,4 +51,3 @@ public class Civil extends AirTransport {
                 + "\n" + "Наличие бизнес класса: " + businessClass + "\n");
     }
 }
-
