@@ -32,7 +32,6 @@ public abstract class Transport {
     public void distanceCalc() {
         distance = time * maxSpeed;
     }
-
 }
 
 
