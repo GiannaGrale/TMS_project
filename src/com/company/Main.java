@@ -1,11 +1,6 @@
 package com.company;
 
-import java.util.concurrent.Callable;
-
-import static com.company.Computer.on;
-
 public class Main {
-
 
     public static void main(String[] args) {
 
@@ -31,7 +26,6 @@ public class Main {
         Lesson_3.twoDimensionalArray();
 
         Lesson_4.main();
-
     }
 }
 

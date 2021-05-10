@@ -8,19 +8,18 @@ public class Computer {
     private String CPU;
     private String RAM;
     private String SSD;
-    private static int resource;
-    public static boolean on = false;
-    public static int counter = 0;
-    public static boolean condition = true;
+    private final int resource;
+    boolean on = false;
+    int counter = 0;
+    boolean condition = true;
 
     public Computer(String RAM, String SSD, String CPU, int resource) {
         this.CPU = CPU;
         this.RAM = RAM;
         this.SSD = SSD;
-        Computer.resource = resource;
+        this.resource = resource;
 
     }
-
 
     public void setCPU(String CPU) {
         this.CPU = CPU;
@@ -50,8 +49,14 @@ public class Computer {
         return resource;
     }
 
+    public void description() {
+        System.out.println("У нас есть ПК с процессором " + getSSD() + ", "
+                + "с оперативой " + getRAM() + " " + "и жестким диском " + getSSD() +
+                ".\nРесурс полных циклов работы равен " + getResource());
 
-    static void turnON() {
+    }
+
+    void turnON_OFF() {
 
         if (!condition) {
             System.out.println("Невозможно вкючить компьютер, сгорел");
@@ -69,39 +74,38 @@ public class Computer {
                 System.out.println("Компьютер сгорел");
                 condition = false;
             }
-        }
-    }
 
-    static void turnOFF() {
+            if (on) {
+                System.out.println("Введите 0 или 1: ");
+                Random console = new Random();
+                int newGuess = console.nextInt(2);
+                Scanner scanner1 = new Scanner(System.in);
+                int count = scanner1.nextInt();
 
-        if (on) {
-            System.out.println("Введите 0 или 1: ");
-            Random random = new Random();
-            int newGuess = random.nextInt(2);
-            Scanner scanner1 = new Scanner(System.in);
-            int count = scanner1.nextInt();
+                if (newGuess == count) {
+                    System.out.println("Компьютер выключается");
+                    counter++;
+                    System.out.println("Счетчик: " + counter);
+                    on = false;
+                } else {
+                    System.out.println("Компьютер сгорел");
+                    condition = false;
 
-
-            if (newGuess == count) {
-                System.out.println("Компьютер выключается");
-                counter++;
-                System.out.println("Счетчик: " + counter);
-                on = false;
-            } else {
-                System.out.println("Компьютер сгорел");
-                condition = false;
+                }
 
             }
 
-        }
-    }
-        static void limCount() {
-
-            if (counter >= resource){
+            if (counter >= resource) {
                 System.out.println("Ресурс превышен, компьютер сгорел");
                 condition = false;
             }
         }
+            while (!on) {
+            if (condition) {
+                turnON_OFF();
+
+            }
+        }
+
     }
-
-
+}
