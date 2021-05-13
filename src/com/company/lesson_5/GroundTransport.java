@@ -4,3 +4,4 @@ abstract class GroundTransport extends Transport {
     int wheelNumber;
     double fuelInput;
 }
+

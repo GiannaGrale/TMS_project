@@ -33,3 +33,4 @@ public class Cargo extends GroundTransport {
                 + "\n" + "Грузоподъемность (кг): " + payload + "\n");
     }
 }
+
