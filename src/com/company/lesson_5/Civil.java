@@ -4,48 +4,34 @@ import java.util.Scanner;
 
 public class Civil extends AirTransport {
     boolean businessClass;
-    public Civil(int maxSpeed, double fuelInput, int passengerNumber,
-                 String model, int power, int weight, int wheelNumber, int payload,
-                 int wingspread, int airstripMinLength, boolean businessClass) {
-        this.wingspread = wingspread;
-        this.airstripMinLength = airstripMinLength;
-        this.passengerNumber = passengerNumber;
-        this.power = power;
-        this.weight = weight;
-        this.wheelNumber = wheelNumber;
+    int passengerNum;
+
+    public Civil(String model, int maxSpeed, int passengerNum,
+                 int power, int weight, int wingspread, int airstripMinLength,
+                 boolean businessClass) {
         this.model = model;
         this.maxSpeed = maxSpeed;
-        this.fuelInput = fuelInput;
-        this.payload = payload;
+        this.passengerNum = passengerNum;
+        this.power = power;
+        this.weight = weight;
+        this.wingspread = wingspread;
+        this.airstripMinLength = airstripMinLength;
         this.businessClass = businessClass;
         this.kWatt();
     }
 
-    @Override
-    public void kWatt() {
-        super.kWatt();
-    }
-
-    @Override
     public void load() {
         System.out.println("Количество пасссажиров: ");
         Scanner scanner = new Scanner(System.in);
         int currentLoad = scanner.nextInt();
-        loadCheck = (passengerNumber > currentLoad) ? "Вместимость самолета не превышена" : "Нет мест";
+        String loadCheck = (passengerNum > currentLoad) ? "Вместимость самолета не превышена" : "Нет мест";
         System.out.println(loadCheck);
     }
 
     @Override
-    public void description() {
-        System.out.println("Марка самолета: " + model
-                + "\n" + "Количество посадочных мест: " + passengerNumber
-                + "\n" + "Количество колес: " + wheelNumber
-                + "\n" + "Расход топлива (л/ч) : " + fuelInput
-                + "\n" + "Масса (кг) : " + weight
-                + "\n" + "Максимальная скорость (км/ч) : " + maxSpeed
-                + "\n" + "Мощность (л/с): " + power
-                + "\n" + "Мощность (кВт/ч): " + kiloWatt
-                + "\n" + "Грузоподъемность (кг): " + payload
+    void description() {
+        super.description();
+        System.out.println("Количество посадочных мест: " + passengerNum
                 + "\n" + "Длина ВПП (м): " + airstripMinLength
                 + "\n" + "Размах крыла: " + wingspread
                 + "\n" + "Наличие бизнес класса: " + businessClass + "\n");

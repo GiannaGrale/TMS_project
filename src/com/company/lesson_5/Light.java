@@ -1,17 +1,22 @@
 package com.company.lesson_5;
 
+import java.util.Scanner;
+
 public class Light extends GroundTransport {
     private double spentFuel;
+    int passengerNumber;
+    String bodyStyle;
+
     public Light(String bodyStyle, int maxSpeed, double fuelInput, int passengerNumber,
                  String model, int power, int weight, int wheelNumber) {
         this.bodyStyle = bodyStyle;
+        this.maxSpeed = maxSpeed;
+        this.fuelInput = fuelInput;
         this.passengerNumber = passengerNumber;
+        this.model = model;
         this.power = power;
         this.weight = weight;
         this.wheelNumber = wheelNumber;
-        this.maxSpeed = maxSpeed;
-        this.fuelInput = fuelInput;
-        this.model = model;
         this.kWatt();
     }
 
@@ -27,31 +32,36 @@ public class Light extends GroundTransport {
         return spentFuel;
     }
 
-    @Override
-    public void kWatt() {
-        super.kWatt();
+    int time;
+
+    int getTime() {
+        Scanner console = new Scanner(System.in);
+        time = console.nextInt();
+        return time;
+    }
+
+    double distance;
+
+    double getDistance() {
+        distance = time * maxSpeed;
+        return distance;
+
     }
 
     @Override
-    public void distanceCalc() {
-        super.distanceCalc();
-    }
-
-    void load() { System.out.println(loadCheck);}
-
-    @Override
-    public void description() {
-        System.out.println("Марка машины: " + model
-                + "\n" + "Количество посадочных мест: " + passengerNumber
+    void description() {
+        super.description();
+        System.out.println("Количество посадочных мест: " + passengerNumber
                 + "\n" + "Тип кузова: " + bodyStyle
                 + "\n" + "Количество колес: " + wheelNumber
-                + "\n" + "Расход топлива (л/100км) : " + fuelInput
-                + "\n" + "Масса (кг) : " + weight
-                + "\n" + "Максимальная скорость (км/ч) : " + maxSpeed
-                + "\n" + "Мощность (л/с): " + power
-                + "\n" + "Мощность (кВт/ч): " + kiloWatt + "\n");
-    }
+                + "\n" + "Расход топлива (л/100км) : " + fuelInput);
 
+        System.out.println("За время " + getTime() + " ч., автомобиль "
+                + model + ", двигаясь с максимальной скоростью "
+                + maxSpeed + " км/ч, проедет "
+                + getDistance() + " км и израсходует "
+                + getSpentFuel() + " л. топлива.\n");
+    }
 }
 
 

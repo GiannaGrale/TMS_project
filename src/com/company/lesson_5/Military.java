@@ -3,27 +3,22 @@ package com.company.lesson_5;
 public class Military extends AirTransport {
     boolean assistedEscapeSystem;
     int missile;
-    public Military(boolean assistedEscapeSystem, int missile, int maxSpeed,
-                    double fuelInput, int passengerNumber, String model,
-                    int power, int weight, int wheelNumber, int payload,
+
+    public Military(String model, boolean assistedEscapeSystem, int missile,
+                    int maxSpeed, int power, int weight,
                     int wingspread, int airstripMinLength) {
+        this.model = model;
         this.assistedEscapeSystem = assistedEscapeSystem;
+        this.maxSpeed = maxSpeed;
         this.missile = missile;
-        this.passengerNumber = passengerNumber;
         this.power = power;
         this.weight = weight;
-        this.wheelNumber = wheelNumber;
-        this.model = model;
-        this.maxSpeed = maxSpeed;
-        this.fuelInput = fuelInput;
-        this.payload = payload;
-        this.airstripMinLength = airstripMinLength;
         this.wingspread = wingspread;
+        this.airstripMinLength = airstripMinLength;
         this.kWatt();
     }
 
-    @Override
-    public void load() {
+    public void missileShot() {
         String loadCheck = missile != 0 ? "Ракета пошла!" : "Боеприпасы отсутсвуют";
         System.out.println(loadCheck);
     }
@@ -34,19 +29,11 @@ public class Military extends AirTransport {
     }
 
     @Override
-    public void description() {
-        System.out.println("Модель истребителя: " + model
-                + "\n" + "Количество мест: " + passengerNumber
-                + "\n" + "Количество колес: " + wheelNumber
-                + "\n" + "Расход топлива (л/100км) : " + fuelInput
-                + "\n" + "Масса (кг) : " + weight
-                + "\n" + "Максимальная скорость (км/ч) : " + maxSpeed
-                + "\n" + "Мощность (л/с): " + power
-                + "\n" + "Мощность (кВт/ч): " + kiloWatt
-                + "\n" + "Грузоподъемность (кг): " + payload
-                + "\n" + "Длина ВПП (м): " + airstripMinLength
+    void description() {
+        super.description();
+        System.out.println("Длина ВПП (м): " + airstripMinLength
                 + "\n" + "Размах крыла: " + wingspread
                 + "\n" + "Наличие системы катапультрования: " + assistedEscapeSystem
-                + "\n" + "Количество ракет на борту: " + missile+ "\n");
+                + "\n" + "Количество ракет на борту: " + missile + "\n");
     }
 }

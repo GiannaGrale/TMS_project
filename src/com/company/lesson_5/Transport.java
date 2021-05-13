@@ -1,36 +1,21 @@
 package com.company.lesson_5;
 
-import java.util.Scanner;
-
 public abstract class Transport {
-    String model;
-    String loadCheck;
-    protected int passengerNumber;
-    protected int wheelNumber;
-    protected double fuelInput;
-    protected int payload;
+
     int power;
     int maxSpeed;
     int weight;
-    int time;
-    double kiloWatt;
-    double distance;
+    String model;
 
-    abstract void description();
-
-    abstract void load ();
-
-    public void time() {
-        Scanner console = new Scanner(System.in);
-        time = console.nextInt();
+    double kWatt() {
+        return power * 0.74;
     }
 
-    public void kWatt() {
-        kiloWatt = power * 0.74;
+    void description() {
+        System.out.println("Марка: " + model
+                + "\n" + "Максимальная скорость (км/ч) : " + maxSpeed
+                + "\n" + "Масса (кг) : " + weight
+                + "\n" + "Мощность (л/с): " + power
+                + "\n" + "Мощность (кВт/ч): " + kWatt());
     }
-
-    public void distanceCalc() {
-        distance = time * maxSpeed;
-    }
-
 }
