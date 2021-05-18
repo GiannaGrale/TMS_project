@@ -10,10 +10,10 @@ public class Proton implements IStart {
         int guess = random.nextInt(3);
         if (guess == 1) {
             System.out.println("Проверка провалена :)");
-            return true;
+            return false;
         } else {
             System.out.println("Проверка прошла успешно :(");
-            return false;
+            return true;
         }
     }
 
