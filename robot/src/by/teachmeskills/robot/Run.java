@@ -35,7 +35,7 @@ public class Run {
 
 
         if (robot1.getPrice() > robot2.getPrice() & robot1.getPrice() > robot3.getPrice()) {
-            System.out.println("Самы дорогой робот под номером 1! \n");
+            System.out.println("Самый дорогой робот под номером 1! \n");
         } else if (robot2.getPrice() > robot1.getPrice() & robot2.getPrice() > robot3.getPrice()) {
             System.out.println("Самый дорогой робот под номером 2! \n");
         } else {
