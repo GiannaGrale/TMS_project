@@ -1,7 +1,7 @@
 package src.by.teachmeskills.robot.legs;
 
 public class SamsungLeg implements ILeg{
-    private int price = 1300;
+    private int price;
 
     public SamsungLeg (int price) {
         this.price = price;
@@ -12,7 +12,7 @@ public class SamsungLeg implements ILeg{
 
     @Override
     public void step() {
-        System.out.println("Это нога Samsung");
+        System.out.println("Это нога Samsung \n");
     }
 
     @Override

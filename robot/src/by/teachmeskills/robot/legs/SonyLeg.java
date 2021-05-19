@@ -1,7 +1,7 @@
 package src.by.teachmeskills.robot.legs;
 
 public class SonyLeg implements ILeg{
-    private int price = 1500;
+    private int price;
 
     public SonyLeg(int price) {
         this.price = price;
@@ -12,7 +12,7 @@ public class SonyLeg implements ILeg{
 
     @Override
     public void step() {
-        System.out.println("Это нога Sony");
+        System.out.println("Это нога Sony \n");
     }
 
     @Override

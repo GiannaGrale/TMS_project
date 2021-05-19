@@ -2,7 +2,7 @@ package src.by.teachmeskills.robot.hands;
 
 public class ToshibaHand implements IHand{
 
-    private int price = 1400;
+    private int price;
     public ToshibaHand (int price) {
         this.price = price;
     }

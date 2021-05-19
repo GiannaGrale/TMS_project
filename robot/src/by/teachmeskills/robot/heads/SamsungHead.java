@@ -1,7 +1,7 @@
 package src.by.teachmeskills.robot.heads;
 
 public class SamsungHead implements IHead{
-    private int price = 2290;
+    private int price;
 
     public SamsungHead (int price) {
         this.price = price;

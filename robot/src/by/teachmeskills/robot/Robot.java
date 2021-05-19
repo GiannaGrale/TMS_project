@@ -9,7 +9,7 @@ public class Robot implements IRobot {
     private IHead head;
     private IHand hand;
     private ILeg leg;
-    int price;
+    private int price;
 
     public Robot(IHead head, IHand hand, ILeg leg) {
         this.head = head;
@@ -37,6 +37,9 @@ public class Robot implements IRobot {
     public void setLeg(ILeg leg) {
         this.leg = leg;
     }
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
     @Override
     public void action() {
@@ -48,7 +51,6 @@ public class Robot implements IRobot {
     @Override
     public int getPrice() {
         price = head.getPrice() + hand.getPrice() + leg.getPrice();
-        System.out.println(price + "\n");
         return price;
     }
 
